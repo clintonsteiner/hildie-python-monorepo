@@ -16,9 +16,9 @@ sphinxcontrib_jsmath==1.0.1
 sphinxcontrib_qthelp==1.0.7
 sphinxcontrib_serializinghtml==1.1.10
 # Transitive dependencies
-requests==2.31.0
-certifi==2024.2.2
+requests==2.32.4
+certifi==2024.7.4
 charset-normalizer==3.3.2
 idna==3.11
-urllib3==2.2.0
+urllib3==2.6.3
 packaging==26.0
