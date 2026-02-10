@@ -2,6 +2,20 @@
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 
+[project]
+name = "hildie"
+version = "0.1.0"
+description = "Hildie monorepo - collection of Python utilities and tools"
+authors = [{name = "Clinton Steiner", email = "clintonsteiner@gmail.com"}]
+license = {text = "MIT"}
+
+[project.urls]
+Homepage = "https://github.com/clintonsteiner/python-monorepo"
+Repository = "https://github.com/clintonsteiner/python-monorepo"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/hildie"]
+
 [tool.uv.workspace]
 members = ["packages/*"]
 
