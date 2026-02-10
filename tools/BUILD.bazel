@@ -2,5 +2,5 @@
 
 exports_files([
     "pytest.bzl",
-    "package_tests.bzl",
+    "hildie.bzl",
 ])

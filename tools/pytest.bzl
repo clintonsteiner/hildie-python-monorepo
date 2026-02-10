@@ -1,25 +1,6 @@
-"""Pytest test generation macros."""
+"""Pytest test macros for Hildie monorepo."""
 
 load("@rules_python//python:defs.bzl", "py_test")
-
-def pytest_test(name, srcs, deps = [], args = [], **kwargs):
-    """Creates a py_test that runs with pytest.
-
-    Args:
-        name: Test target name
-        srcs: Test source files
-        deps: Dependencies
-        args: Additional pytest arguments
-        **kwargs: Additional py_test arguments
-    """
-    py_test(
-        name = name,
-        srcs = srcs,
-        main = srcs[0] if len(srcs) == 1 else None,
-        deps = deps + ["@pip//pytest"],
-        args = ["-v"] + args + ["$(location {})".format(src) for src in srcs],
-        **kwargs
-    )
 
 def pytest_tests(name, srcs, deps = [], **kwargs):
     """Creates individual py_test targets for each test file and a test_suite.
@@ -49,4 +30,20 @@ def pytest_tests(name, srcs, deps = [], **kwargs):
     native.test_suite(
         name = name,
         tests = test_targets,
+    )
+
+def package_tests(deps = None, **kwargs):
+    """Standard test target for a package. Auto-discovers tests/**/test_*.py files.
+
+    Args:
+        deps: Additional dependencies beyond //:hildie
+        **kwargs: Additional arguments passed to pytest_tests
+    """
+    all_deps = ["//:hildie"] + (deps if deps else [])
+
+    pytest_tests(
+        name = "tests",
+        srcs = native.glob(["tests/**/test_*.py"]),
+        deps = all_deps,
+        **kwargs
     )

@@ -1,5 +1,5 @@
 """BUILD file for hildie-archive-git-forks tests."""
 
-load("//tools:package_tests.bzl", "package_tests")
+load("//tools:pytest.bzl", "package_tests")
 
 package_tests(deps = ["@pip//click"])

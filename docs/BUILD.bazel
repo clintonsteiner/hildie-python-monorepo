@@ -2,7 +2,6 @@
 
 load("@rules_python//python:defs.bzl", "py_binary")
 
-# Sphinx builder wrapper
 py_binary(
     name = "sphinx_build",
     srcs = ["sphinx_build.py"],
@@ -10,7 +9,6 @@ py_binary(
     deps = ["@pip_docs//sphinx"],
 )
 
-# Documentation build rule
 genrule(
     name = "docs",
     srcs = glob([
@@ -24,41 +22,22 @@ genrule(
     ],
     outs = ["html_docs.tar.gz"],
     cmd = """
-        # Set up directories
         TMPDIR=$$(mktemp -d)
-        BUILDDIR=$$TMPDIR/html
         SRCDIR=$$TMPDIR/source
         mkdir -p $$SRCDIR/_static
 
-        # Copy source files maintaining structure
         for src in $(SRCS); do
-            if [[ $$src == */source/* ]]; then
+            [[ $$src == */source/* ]] && {
                 rel=$${src#*docs/source/}
-                target=$$SRCDIR/$$rel
-                mkdir -p $$(dirname $$target)
-                cp $$src $$target
-            fi
+                mkdir -p $$(dirname $$SRCDIR/$$rel)
+                cp $$src $$SRCDIR/$$rel
+            }
         done
 
-        # Build docs with PYTHONPATH including the project root
-        PYTHONPATH=$$(pwd) $(location :sphinx_build) \
-            -b html \
-            $$SRCDIR \
-            $$BUILDDIR
-
-        # Create tarball of the generated docs
+        PYTHONPATH=$$(pwd) $(location :sphinx_build) -b html $$SRCDIR $$TMPDIR/html
         tar -czf $@ -C $$TMPDIR html
-
-        # Cleanup
         rm -rf $$TMPDIR
     """,
     tools = [":sphinx_build"],
-    visibility = ["//visibility:public"],
-)
-
-# Alias for convenience
-alias(
-    name = "html",
-    actual = ":docs",
     visibility = ["//visibility:public"],
 )

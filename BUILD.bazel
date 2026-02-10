@@ -1,9 +1,9 @@
 """Root BUILD file for Hildie monorepo."""
 
-load("@rules_python//python:defs.bzl", "py_binary", "py_library")
+load("@rules_python//python:defs.bzl", "py_library")
 load("@rules_python//python:packaging.bzl", "py_wheel")
+load("//tools:hildie.bzl", "all_package_tests", "hildie_cli")
 
-# All hildie code
 py_library(
     name = "hildie",
     srcs = glob(["src/hildie/**/*.py"]),
@@ -15,44 +15,33 @@ py_library(
     ],
 )
 
-# CLI binaries
-py_binary(
+hildie_cli(
     name = "hildie-cli",
-    srcs = ["src/hildie/hildie_cli/main.py"],
-    main = "src/hildie/hildie_cli/main.py",
-    deps = [":hildie"],
+    module = "hildie_cli",
 )
 
-py_binary(
+hildie_cli(
     name = "hildie-archive-git-forks",
-    srcs = ["src/hildie/hildie_archive_git_forks/main.py"],
-    main = "src/hildie/hildie_archive_git_forks/main.py",
-    deps = [":hildie"],
+    module = "hildie_archive_git_forks",
 )
 
-# Single wheel for PyPI
 py_wheel(
     name = "wheel",
     description_file = "README.md",
     distribution = "hildie",
     python_requires = ">=3.11",
     python_tag = "py3",
-    requires = [
-        "click",
-        "requests",
-    ],
     strip_path_prefixes = ["src/"],
     version = "0.1.1",
     deps = [":hildie"],
 )
 
-# All tests - discovers all test targets from packages
-test_suite(
+all_package_tests(
     name = "all_tests",
-    tests = [
-        "//packages/archive-git-forks:tests",
-        "//packages/my-app:tests",
-        "//packages/my-cli:tests",
-        "//packages/my-library:tests",
+    packages = [
+        "archive-git-forks",
+        "my-app",
+        "my-cli",
+        "my-library",
     ],
 )
