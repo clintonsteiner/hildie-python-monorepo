@@ -7,23 +7,7 @@ py_binary(
     name = "sphinx_build",
     srcs = ["sphinx_build.py"],
     main = "sphinx_build.py",
-    deps = [
-        "@pip_docs//alabaster",
-        "@pip_docs//babel",
-        "@pip_docs//docutils",
-        "@pip_docs//imagesize",
-        "@pip_docs//jinja2",
-        "@pip_docs//markupsafe",
-        "@pip_docs//pygments",
-        "@pip_docs//snowballstemmer",
-        "@pip_docs//sphinx",
-        "@pip_docs//sphinxcontrib_applehelp",
-        "@pip_docs//sphinxcontrib_devhelp",
-        "@pip_docs//sphinxcontrib_htmlhelp",
-        "@pip_docs//sphinxcontrib_jsmath",
-        "@pip_docs//sphinxcontrib_qthelp",
-        "@pip_docs//sphinxcontrib_serializinghtml",
-    ],
+    deps = ["@pip_docs//sphinx"],
 )
 
 # Documentation build rule

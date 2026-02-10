@@ -1,9 +1,5 @@
 """BUILD file for hildie-library tests."""
 
-load("//tools:pytest.bzl", "pytest_tests")
+load("//tools:package_tests.bzl", "package_tests")
 
-pytest_tests(
-    name = "tests",
-    srcs = glob(["tests/**/test_*.py"]),
-    deps = ["//:hildie"],
-)
+package_tests()

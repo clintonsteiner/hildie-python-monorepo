@@ -1,20 +1,11 @@
 # Bazel configuration for Hildie monorepo
 
-# Use bzlmod
-common --enable_bzlmod
-
 # Test output
 test --test_output=errors
 
 # CI configuration
 build:ci --repository_cache=~/.cache/bazel-repo
 build:ci --disk_cache=~/.cache/bazel-disk
-
-# Performance
-build --jobs=auto
-
-# Strict mode
-build --incompatible_strict_action_env
 
 # Release builds
 build:release --stamp

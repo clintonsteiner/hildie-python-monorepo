@@ -1,1 +1,6 @@
-"""BUILD file for tools."""
+"""Bazel tooling and macros."""
+
+exports_files([
+    "pytest.bzl",
+    "package_tests.bzl",
+])

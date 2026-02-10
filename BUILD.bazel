@@ -46,7 +46,7 @@ py_wheel(
     deps = [":hildie"],
 )
 
-# All tests
+# All tests - discovers all test targets from packages
 test_suite(
     name = "all_tests",
     tests = [
