@@ -6,7 +6,7 @@ from pathlib import Path
 from unittest.mock import MagicMock, patch
 
 from click.testing import CliRunner
-from cosi.archive_git_forks.main import cli
+from cosi.cosi_archive_git_forks.main import cli
 
 
 class TestFetchCommand:
@@ -16,9 +16,9 @@ class TestFetchCommand:
         """Set up test fixtures."""
         self.runner = CliRunner()
 
-    @patch("cosi.archive_git_forks.main.get_github_username")
-    @patch("cosi.archive_git_forks.main.get_env_or_fail")
-    @patch("cosi.archive_git_forks.main.ArchiveForks")
+    @patch("cosi.cosi_archive_git_forks.main.get_github_username")
+    @patch("cosi.cosi_archive_git_forks.main.get_env_or_fail")
+    @patch("cosi.cosi_archive_git_forks.main.ArchiveForks")
     def test_fetch_command_success(self, mock_archiver_class, mock_env, mock_username):
         """Test successful fetch command."""
         # Setup mocks
@@ -45,7 +45,7 @@ class TestFetchCommand:
             assert "Found 2 forked repositories" in result.output
             assert "Exported 2 repos to" in result.output
 
-    @patch("cosi.archive_git_forks.main.get_env_or_fail")
+    @patch("cosi.cosi_archive_git_forks.main.get_env_or_fail")
     def test_fetch_command_missing_credentials(self, mock_env):
         """Test fetch command with missing credentials."""
         mock_env.side_effect = Exception("GITHUB_USERNAME is not set")
@@ -61,9 +61,9 @@ class TestProcessCommand:
         """Set up test fixtures."""
         self.runner = CliRunner()
 
-    @patch("cosi.archive_git_forks.main.get_github_username")
-    @patch("cosi.archive_git_forks.main.get_env_or_fail")
-    @patch("cosi.archive_git_forks.main.ArchiveForks")
+    @patch("cosi.cosi_archive_git_forks.main.get_github_username")
+    @patch("cosi.cosi_archive_git_forks.main.get_env_or_fail")
+    @patch("cosi.cosi_archive_git_forks.main.ArchiveForks")
     def test_process_command_success(self, mock_archiver_class, mock_env, mock_username):
         """Test successful process command."""
         # Setup mocks

@@ -16,7 +16,7 @@ dependencies = [
 ]
 
 [project.scripts]
-cosi-archive-git-forks = "cosi.archive_git_forks.main:cli"
+cosi-archive-git-forks = "cosi.cosi_archive_git_forks.main:cli"
 
 [project.urls]
 Homepage = "https://github.com/clintonsteiner/python-monorepo"

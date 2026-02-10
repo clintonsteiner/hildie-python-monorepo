@@ -15,7 +15,7 @@ dependencies = [
 ]
 
 [project.scripts]
-cosi-cli = "cosi.cli.main:cli"
+cosi-cli = "cosi.cosi_cli.main:cli"
 
 [project.urls]
 Homepage = "https://github.com/clintonsteiner/python-monorepo"

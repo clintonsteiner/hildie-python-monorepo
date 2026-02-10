@@ -2,7 +2,7 @@
 
 __version__ = "0.1.0"
 
-from cosi.library import add, multiply
+from cosi.cosi_library import add, multiply
 
 
 def process_numbers(numbers: list[int]) -> dict[str, int]:
