@@ -1,6 +1,6 @@
 # Documentation requirements lock file
 sphinx==7.2.6
-sphinx-rtd-theme==2.0.0
+sphinx-rtd-theme==3.1.0
 docutils==0.20.1
 alabaster==0.7.16
 babel==2.14.0
