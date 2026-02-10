@@ -4,7 +4,7 @@ updates:
   - package-ecosystem: "bazel"
     directory: "/"
     schedule:
-      interval: "weekly"
+      interval: 'daily'
     commit-message:
       prefix: "bazel"
 
@@ -12,7 +12,7 @@ updates:
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      interval: "weekly"
+      interval: 'daily'
     commit-message:
       prefix: "ci"
 
@@ -20,6 +20,6 @@ updates:
   - package-ecosystem: "pip"
     directory: "/"
     schedule:
-      interval: "weekly"
+      interval: 'daily'
     commit-message:
       prefix: "pip"
