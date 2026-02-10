@@ -1,3 +1,3 @@
 """Archive GitHub forked repositories."""
 
-__version__ = "0.1.0"
+from hildie._version import __version__ as __version__

@@ -1,6 +1,6 @@
 """A reusable library in the Python monorepo."""
 
-__version__ = "0.1.0"
+from hildie._version import __version__ as __version__
 
 
 def add(a: int, b: int) -> int:

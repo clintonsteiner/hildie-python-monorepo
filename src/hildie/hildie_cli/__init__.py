@@ -1,3 +1,3 @@
 """A CLI tool that uses the shared library."""
 
-__version__ = "0.1.0"
+from hildie._version import __version__ as __version__

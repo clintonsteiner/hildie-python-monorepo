@@ -49,9 +49,8 @@ jobs:
           VERSION=${GITHUB_REF_NAME#v}
           echo "VERSION=$VERSION" >> $GITHUB_ENV
           echo "Publishing version: $VERSION"
-          # Update version in py_wheel target
-          sed -i 's/version = "[0-9.]*"/version = "'$VERSION'"/' BUILD.bazel
-          grep -A5 "py_wheel" BUILD.bazel | head -10
+          # Update version across all files
+          python3 tools/update_version.py $VERSION
 
       - name: Build wheel
         run: |
