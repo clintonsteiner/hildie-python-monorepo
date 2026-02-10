@@ -1,13 +1,7 @@
 {
   "name": "Python Monorepo with uv Workspaces",
   "description": "A modern Python monorepo template for managing multiple packages with uv workspaces",
-  "keywords": [
-    "python",
-    "monorepo",
-    "uv",
-    "workspace",
-    "template"
-  ],
+  "keywords": ["python", "monorepo", "uv", "workspace", "template"],
   "setup": {
     "automated": true,
     "script": "setup_template.py",
@@ -45,9 +39,5 @@
     }
   ],
   "python_version": ">=3.11",
-  "workflows": [
-    "lint.yml",
-    "test.yml",
-    "publish.yml"
-  ]
+  "workflows": ["lint.yml", "test.yml", "publish.yml"]
 }

@@ -17,11 +17,13 @@ class TestFetchCommand:
         """Set up test fixtures."""
         self.runner = CliRunner()
 
+    @patch("archive_git_forks.main.get_github_username")
     @patch("archive_git_forks.main.get_env_or_fail")
     @patch("archive_git_forks.main.ArchiveForks")
-    def test_fetch_command_success(self, mock_archiver_class, mock_env):
+    def test_fetch_command_success(self, mock_archiver_class, mock_env, mock_username):
         """Test successful fetch command."""
         # Setup mocks
+        mock_username.return_value = "testuser"
         mock_env.side_effect = lambda x: "testuser" if x == "GITHUB_USERNAME" else "token123"
         mock_archiver = MagicMock()
         mock_archiver_class.return_value = mock_archiver
@@ -60,9 +62,15 @@ class TestProcessCommand:
         """Set up test fixtures."""
         self.runner = CliRunner()
 
+    @patch("archive_git_forks.main.get_github_username")
+    @patch("archive_git_forks.main.get_env_or_fail")
     @patch("archive_git_forks.main.ArchiveForks")
-    def test_process_command_success(self, mock_archiver_class):
+    def test_process_command_success(self, mock_archiver_class, mock_env, mock_username):
         """Test successful process command."""
+        # Setup mocks
+        mock_username.return_value = "testuser"
+        mock_env.side_effect = lambda x: "testuser" if x == "GITHUB_USERNAME" else "token123"
+
         with tempfile.TemporaryDirectory() as tmpdir:
             # Create test repos file
             repos_file = Path(tmpdir) / "repos.json"

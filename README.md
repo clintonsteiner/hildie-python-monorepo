@@ -50,12 +50,14 @@ python-monorepo/
 ### Installation
 
 1. Clone the repository:
+
    ```bash
    git clone <repository-url>
    cd python-monorepo
    ```
 
 2. Sync dependencies:
+
    ```bash
    uv sync
    ```
@@ -120,11 +122,13 @@ The dependency will be resolved from the workspace source automatically.
 ### Creating a New Package
 
 1. Create the package directory structure:
+
    ```bash
    mkdir -p packages/my-new-package/{src/my_new_package,tests}
    ```
 
 2. Create `packages/my-new-package/pyproject.toml`:
+
    ```toml
    [build-system]
    requires = ["hatchling"]
@@ -139,6 +143,7 @@ The dependency will be resolved from the workspace source automatically.
    ```
 
 3. Add the package to the root `pyproject.toml`:
+
    ```toml
    [tool.uv]
    workspace = [
@@ -207,6 +212,7 @@ git push origin my-library-v0.1.0
 ```
 
 The publishing workflow will:
+
 1. Build the package
 2. Publish to PyPI using trusted publishing (no secrets required)
 

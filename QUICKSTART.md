@@ -86,11 +86,13 @@ cd /Users/cs/python-monorepo && ls -la packages/
 ## Adding a New Package
 
 1. Create directory structure:
+
    ```bash
    mkdir -p packages/my-new-package/{src/my_new_package,tests}
    ```
 
 2. Create `packages/my-new-package/pyproject.toml`:
+
    ```toml
    [build-system]
    requires = ["hatchling"]
@@ -104,6 +106,7 @@ cd /Users/cs/python-monorepo && ls -la packages/
    ```
 
 3. Add to root `pyproject.toml`:
+
    ```toml
    [tool.uv]
    workspace = [
@@ -148,16 +151,19 @@ python-monorepo/
 ## Troubleshooting
 
 **"Module not found" errors:**
+
 ```bash
 uv sync
 ```
 
 **Dependency conflicts:**
+
 ```bash
 uv lock --upgrade
 ```
 
 **Need to rebuild environment:**
+
 ```bash
 rm -rf .uv
 uv sync

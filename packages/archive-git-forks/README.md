@@ -5,6 +5,7 @@ Archive GitHub forked repositories locally and make them private.
 ## Overview
 
 This tool helps you manage forked repositories by:
+
 1. Fetching all your forks from GitHub
 2. Exporting them to a JSON file for manual review
 3. Cloning selected repositories locally
@@ -25,9 +26,11 @@ uv pip install -e .
    - You should see: "Hi username! You've successfully authenticated..."
 
 2. **Configure git user (for username detection):**
+
    ```bash
    git config --global user.name "your-github-username"
    ```
+
    The tool will auto-detect your GitHub username from this setting.
 
 3. **Generate a GitHub Personal Access Token:**
@@ -36,11 +39,13 @@ uv pip install -e .
    - Copy the token
 
 4. **Set environment variable:**
+
    ```bash
    export GITHUB_TOKEN="your_personal_access_token"
    ```
 
    Example:
+
    ```bash
    export GITHUB_TOKEN="ghp_xxxxxxxxxxxxxxxxxxxx"
    archive-git-forks fetch
@@ -65,6 +70,7 @@ archive-git-forks process
 ```
 
 The tool will:
+
 - Clone each repository
 - Create zip archives in `./archived_repos/`
 - Make each repository private on GitHub
@@ -131,6 +137,7 @@ Options:
 ```
 
 Example:
+
 ```bash
 # Review and confirm before deleting
 archive-git-forks delete
@@ -173,16 +180,19 @@ archive-git-forks cleanup
 ## Troubleshooting
 
 **"Failed to clone ... permission denied (publickey)"**
+
 - SSH keys aren't configured for GitHub
 - Run: `ssh -T git@github.com` to test
 - Add your public key to https://github.com/settings/keys
 
 **"Cannot make repo private (422 Unprocessable Entity)"**
+
 - You can't make forks private on free plans
 - The repo is still archived successfully
 - You may need a paid GitHub plan to make forks private
 
 **"Could not determine GitHub username"**
+
 - Set your git user: `git config --global user.name "your-username"`
 - Or add to SSH config: `~/.ssh/config`
 
