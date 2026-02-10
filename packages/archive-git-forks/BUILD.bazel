@@ -1,11 +1,12 @@
 """BUILD file for hildie-archive-git-forks package."""
 
-load("@rules_python//python:defs.bzl", "py_binary", "py_library", "py_test")
+load("@rules_python//python:defs.bzl", "py_binary", "py_library")
 load("@rules_python//python:packaging.bzl", "py_wheel")
+load("//tools:pytest.bzl", "pytest_tests")
 
 py_library(
     name = "hildie_archive_git_forks",
-    srcs = glob(["src/hildie/**/*.py"]),
+    srcs = glob(["src/**/*.py"]),
     imports = ["src"],
     visibility = ["//visibility:public"],
     deps = [
@@ -22,32 +23,12 @@ py_binary(
     deps = [":hildie_archive_git_forks"],
 )
 
-py_test(
-    name = "test_archive_git_cli",
-    srcs = ["tests/test_archive_git_cli.py"],
-    main = "tests/test_archive_git_cli.py",
+pytest_tests(
+    name = "tests",
+    srcs = glob(["tests/**/test_*.py"]),
     deps = [
         ":hildie_archive_git_forks",
         "@pip//click",
-        "@pip//pytest",
-    ],
-)
-
-py_test(
-    name = "test_archive_git_forks",
-    srcs = ["tests/test_archive_git_forks.py"],
-    main = "tests/test_archive_git_forks.py",
-    deps = [
-        ":hildie_archive_git_forks",
-        "@pip//pytest",
-    ],
-)
-
-test_suite(
-    name = "all_tests",
-    tests = [
-        ":test_archive_git_cli",
-        ":test_archive_git_forks",
     ],
 )
 

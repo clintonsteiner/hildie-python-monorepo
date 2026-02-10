@@ -1,11 +1,12 @@
 """BUILD file for hildie-app package."""
 
-load("@rules_python//python:defs.bzl", "py_library", "py_test")
+load("@rules_python//python:defs.bzl", "py_library")
 load("@rules_python//python:packaging.bzl", "py_wheel")
+load("//tools:pytest.bzl", "pytest_tests")
 
 py_library(
     name = "hildie_app",
-    srcs = glob(["src/hildie/**/*.py"]),
+    srcs = glob(["src/**/*.py"]),
     imports = ["src"],
     visibility = ["//visibility:public"],
     deps = [
@@ -14,19 +15,10 @@ py_library(
     ],
 )
 
-py_test(
-    name = "test_app",
-    srcs = ["tests/test_app.py"],
-    main = "tests/test_app.py",
-    deps = [
-        ":hildie_app",
-        "@pip//pytest",
-    ],
-)
-
-test_suite(
-    name = "all_tests",
-    tests = [":test_app"],
+pytest_tests(
+    name = "tests",
+    srcs = glob(["tests/**/test_*.py"]),
+    deps = [":hildie_app"],
 )
 
 py_wheel(

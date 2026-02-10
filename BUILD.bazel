@@ -14,9 +14,9 @@ py_library(
 test_suite(
     name = "all_tests",
     tests = [
-        "//packages/my-library:all_tests",
-        "//packages/my-app:all_tests",
-        "//packages/my-cli:all_tests",
-        "//packages/archive-git-forks:all_tests",
+        "//packages/my-library:tests",
+        "//packages/my-app:tests",
+        "//packages/my-cli:tests",
+        "//packages/archive-git-forks:tests",
     ],
 )
