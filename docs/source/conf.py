@@ -24,17 +24,24 @@ templates_path = ["_templates"]
 exclude_patterns = []
 
 # -- Options for HTML output -------------------------------------------------
-html_theme = "alabaster"  # Built-in theme, no extra package needed
+html_theme = "sphinx_rtd_theme"
 html_static_path = ["_static"]
 html_logo = "_static/hildie.png"
 html_favicon = "_static/hildie.png"
 
 html_theme_options = {
-    "logo": "hildie.png",
-    "logo_name": True,
-    "description": "Named after Hildie, because all the good names were taken!",
-    "github_user": "clintonsteiner",
-    "github_repo": "python-monorepo",
+    "logo_only": False,
+    "display_version": True,
+    "prev_next_buttons_location": "bottom",
+    "style_external_links": False,
+    "vcs_pageview_mode": "",
+    "style_nav_header_background": "#2980B9",
+    # Toc options
+    "collapse_navigation": True,
+    "sticky_navigation": True,
+    "navigation_depth": 4,
+    "includehidden": True,
+    "titles_only": False,
 }
 
 # -- Intersphinx configuration -----------------------------------------------
