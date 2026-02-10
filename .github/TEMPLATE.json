@@ -1,0 +1,53 @@
+{
+  "name": "Python Monorepo with uv Workspaces",
+  "description": "A modern Python monorepo template for managing multiple packages with uv workspaces",
+  "keywords": [
+    "python",
+    "monorepo",
+    "uv",
+    "workspace",
+    "template"
+  ],
+  "setup": {
+    "automated": true,
+    "script": "setup_template.py",
+    "instructions": [
+      "1. Click 'Use this template' on GitHub",
+      "2. Clone your new repository",
+      "3. Run: python setup_template.py",
+      "4. Follow the prompts to customize your project",
+      "5. Run: uv sync"
+    ]
+  },
+  "features": [
+    "uv workspace management",
+    "Shared ruff linting configuration",
+    "pytest testing framework",
+    "GitHub Actions CI/CD",
+    "PyPI publishing automation",
+    "Support for libraries, apps, and CLI tools"
+  ],
+  "packages": [
+    {
+      "name": "my-library",
+      "type": "library",
+      "description": "Example reusable library"
+    },
+    {
+      "name": "my-app",
+      "type": "application",
+      "description": "Example application using the library"
+    },
+    {
+      "name": "my-cli",
+      "type": "cli",
+      "description": "Example CLI tool using the library"
+    }
+  ],
+  "python_version": ">=3.11",
+  "workflows": [
+    "lint.yml",
+    "test.yml",
+    "publish.yml"
+  ]
+}

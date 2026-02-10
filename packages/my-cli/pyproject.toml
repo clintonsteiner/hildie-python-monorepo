@@ -1,0 +1,33 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "my-cli"
+version = "0.1.0"
+description = "A CLI tool that uses the shared library"
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [{name = "Developer", email = "dev@example.com"}]
+license = {text = "MIT"}
+dependencies = [
+    "my-library>=0.1.0",
+    "click>=8.1.0",
+]
+
+[project.scripts]
+my-cli = "my_cli.main:cli"
+
+[project.urls]
+Homepage = "https://github.com/example/python-monorepo"
+Repository = "https://github.com/example/python-monorepo"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/my_cli"]
+
+[dependency-groups]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-cov>=4.1.0",
+    "click>=8.1.0",
+]
