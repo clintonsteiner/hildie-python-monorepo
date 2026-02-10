@@ -34,7 +34,7 @@ py_binary(
 py_wheel(
     name = "wheel",
     distribution = "hildie",
-    version = "0.1.0",
+    version = "0.1.1",
     python_tag = "py3",
     strip_path_prefixes = ["src/"],
     requires = [

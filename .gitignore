@@ -1,6 +1,6 @@
-# uv
-.uv/
-uv.lock
+# Bazel
+bazel-*
+.bazelrc.user
 
 # Python
 __pycache__/
@@ -8,37 +8,20 @@ __pycache__/
 *$py.class
 *.so
 .Python
-env/
-venv/
-ENV/
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
 *.egg-info/
-.installed.cfg
 *.egg
-MANIFEST
+.installed.cfg
 
 # Virtual environments
-.venv
+.venv/
+venv/
 .env
-.virtualenv
 
 # Testing
 .pytest_cache/
 .coverage
 .coverage.*
 htmlcov/
-.tox/
 
 # IDEs
 .vscode/
@@ -47,7 +30,3 @@ htmlcov/
 *.swo
 *~
 .DS_Store
-
-# Project specific
-*.log
-*.pot
