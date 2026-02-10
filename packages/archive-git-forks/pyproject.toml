@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "cosi-archive-git-forks"
+name = "hildie-archive-git-forks"
 version = "0.1.0"
 description = "Archive GitHub forked repositories locally and make them private"
 readme = "README.md"
@@ -16,7 +16,7 @@ dependencies = [
 ]
 
 [project.scripts]
-cosi-archive-git-forks = "cosi.cosi_archive_git_forks.main:cli"
+hildie-archive-git-forks = "hildie.hildie_archive_git_forks.main:cli"
 
 [project.urls]
 Homepage = "https://github.com/clintonsteiner/python-monorepo"

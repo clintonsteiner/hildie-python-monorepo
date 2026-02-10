@@ -6,19 +6,19 @@ build-backend = "hatchling.build"
 members = ["packages/*"]
 
 [tool.uv.sources]
-cosi-library = { workspace = true }
-cosi-app = { workspace = true }
-cosi-cli = { workspace = true }
-cosi-archive-git-forks = { workspace = true }
+hildie-library = { workspace = true }
+hildie-app = { workspace = true }
+hildie-cli = { workspace = true }
+hildie-archive-git-forks = { workspace = true }
 
 [dependency-groups]
 dev = [
     "pytest>=7.4.0",
     "pytest-cov>=4.1.0",
     "ruff>=0.4.0",
-    "cosi-app",
-    "cosi-cli",
-    "cosi-archive-git-forks",
+    "hildie-app",
+    "hildie-cli",
+    "hildie-archive-git-forks",
 ]
 
 [tool.pytest.ini_options]

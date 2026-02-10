@@ -2,7 +2,7 @@
 
 import click
 
-from cosi.cosi_library import add, multiply
+from hildie.hildie_library import add, multiply
 
 
 @click.group()

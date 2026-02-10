@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "cosi-library"
+name = "hildie-library"
 version = "0.1.0"
 description = "A reusable library in the monorepo"
 requires-python = ">=3.11"

@@ -3,19 +3,19 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "cosi-cli"
+name = "hildie-cli"
 version = "0.1.0"
 description = "A CLI tool that uses the shared library"
 requires-python = ">=3.11"
 authors = [{name = "Clinton Steiner", email = "clintonsteiner@gmail.com"}]
 license = {text = "MIT"}
 dependencies = [
-    "cosi-library>=0.1.0",
+    "hildie-library>=0.1.0",
     "click>=8.1.0",
 ]
 
 [project.scripts]
-cosi-cli = "cosi.cosi_cli.main:cli"
+hildie-cli = "hildie.hildie_cli.main:cli"
 
 [project.urls]
 Homepage = "https://github.com/clintonsteiner/python-monorepo"

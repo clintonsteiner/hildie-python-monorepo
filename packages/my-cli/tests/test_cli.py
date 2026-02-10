@@ -1,7 +1,7 @@
 """Tests for my_cli module."""
 
 from click.testing import CliRunner
-from cosi.cosi_cli.main import cli
+from hildie.hildie_cli.main import cli
 
 
 class TestCLI:
