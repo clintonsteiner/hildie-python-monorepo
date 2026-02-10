@@ -25,6 +25,9 @@ jobs:
       - name: Sync dependencies
         run: uv sync --all-groups
 
+      - name: Install workspace packages
+        run: uv pip install -e .
+
       - name: Run tests
         run: uv run pytest packages -v
 
