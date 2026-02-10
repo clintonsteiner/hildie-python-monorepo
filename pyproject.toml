@@ -7,7 +7,14 @@ workspace = [
     ["packages/my-library"],
     ["packages/my-app"],
     ["packages/my-cli"],
+    { path = "packages/archive-git-forks" },
 ]
+
+[tool.uv.sources]
+my-library = { workspace = true }
+my-app = { workspace = true }
+my-cli = { workspace = true }
+archive-git-forks = { workspace = true }
 
 [dependency-groups]
 dev = [
@@ -18,7 +25,7 @@ dev = [
 
 [tool.pytest.ini_options]
 minversion = "7.0"
-addopts = "-v --cov=. --cov-report=term-local-skip=100"
+addopts = "-v "
 testpaths = ["packages"]
 python_files = ["test_*.py"]
 python_classes = ["Test*"]
