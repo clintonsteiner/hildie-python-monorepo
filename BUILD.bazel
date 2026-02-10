@@ -33,14 +33,16 @@ py_binary(
 # Single wheel for PyPI
 py_wheel(
     name = "wheel",
+    description_file = "README.md",
     distribution = "hildie",
-    version = "0.1.1",
+    python_requires = ">=3.11",
     python_tag = "py3",
-    strip_path_prefixes = ["src/"],
     requires = [
         "click",
         "requests",
     ],
+    strip_path_prefixes = ["src/"],
+    version = "0.1.1",
     deps = [":hildie"],
 )
 
@@ -48,9 +50,9 @@ py_wheel(
 test_suite(
     name = "all_tests",
     tests = [
-        "//packages/my-library:tests",
+        "//packages/archive-git-forks:tests",
         "//packages/my-app:tests",
         "//packages/my-cli:tests",
-        "//packages/archive-git-forks:tests",
+        "//packages/my-library:tests",
     ],
 )

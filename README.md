@@ -78,6 +78,24 @@ git push origin v0.2.0
 
 The version is automatically extracted from the tag.
 
+## Documentation
+
+Full documentation is available in the `docs/` directory. To build and view:
+
+```bash
+# Install documentation dependencies
+uv pip install -e ".[docs]"
+
+# Build the docs
+cd docs
+make html
+
+# Open in browser
+open build/html/index.html
+```
+
+The documentation includes the story behind the name "Hildie" - since all the good package names were taken, this project is named after Hildie, the best dog!
+
 ## License
 
 MIT

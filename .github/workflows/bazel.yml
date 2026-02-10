@@ -48,15 +48,21 @@ jobs:
         run: |
           VERSION=${GITHUB_REF_NAME#v}
           echo "VERSION=$VERSION" >> $GITHUB_ENV
-          sed -i "s/version = \".*\"/version = \"$VERSION\"/" BUILD.bazel
+          echo "Publishing version: $VERSION"
+          # Update version in py_wheel target
+          sed -i 's/version = "[0-9.]*"/version = "'$VERSION'"/' BUILD.bazel
+          grep -A5 "py_wheel" BUILD.bazel | head -10
 
       - name: Build wheel
-        run: bazel build //:wheel
+        run: |
+          bazel build //:wheel
+          ls -la bazel-bin/hildie-*.whl
 
       - name: Collect wheel
         run: |
           mkdir -p dist
-          cp bazel-bin/hildie-*.whl dist/
+          cp bazel-bin/hildie-${{ env.VERSION }}-py3-none-any.whl dist/
+          ls -la dist/
 
       - name: Publish to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
