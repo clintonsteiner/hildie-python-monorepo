@@ -194,5 +194,5 @@ This project is licensed under the MIT License — see the [LICENSE](LICENSE) fi
   <em>Made by Clinton, inspired by Hildie</em>
 </p>
 <p align="center">
-  <img src="https://raw.githubusercontent.com/clintonsteiner/python-monorepo/refs/heads/master/hildie.jpeg" alt="Hildie the Dog" width="400"/>
+  <img src="https://raw.githubusercontent.com/clintonsteiner/python-monorepo/refs/heads/master/hildie.png" alt="Hildie the Dog" width="400"/>
 </p>
