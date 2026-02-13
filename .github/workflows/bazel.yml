@@ -156,26 +156,6 @@ jobs:
         with:
           gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
 
-      - name: Publish Java JAR to Maven Central
-        continue-on-error: true
-        env:
-          MAVEN_PUBLISH_USER: ${{ secrets.MAVEN_PUBLISH_USER }}
-          MAVEN_PUBLISH_PASSWORD: ${{ secrets.MAVEN_PUBLISH_PASSWORD }}
-        run: |
-          mkdir -p ~/.m2
-          cat > ~/.m2/settings.xml << 'EOF'
-          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0">
-            <servers>
-              <server>
-                <id>central</id>
-                <username>${{ secrets.MAVEN_PUBLISH_USER }}</username>
-                <password>${{ secrets.MAVEN_PUBLISH_PASSWORD }}</password>
-              </server>
-            </servers>
-          </settings>
-          EOF
-          cd source/hildie/java/hildie-java-lib
-          mvn clean deploy -Drevision=${{ env.VERSION }} -DskipTests --batch-mode -q
 
       - name: Publish Rust crates to crates.io
         continue-on-error: true
