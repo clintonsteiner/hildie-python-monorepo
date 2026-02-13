@@ -7,8 +7,8 @@
 <p align="center">
   <a href="https://pypi.org/project/hildie/"><img src="https://img.shields.io/pypi/v/hildie?color=blue" alt="PyPI"></a>
   <a href="https://pypi.org/project/hildie/"><img src="https://img.shields.io/badge/python-3.11%2B-blue" alt="Python 3.11+"></a>
-  <a href="https://github.com/clintonsteiner/python-monorepo/actions"><img src="https://github.com/clintonsteiner/python-monorepo/actions/workflows/bazel.yml/badge.svg" alt="Build"></a>
-  <a href="https://github.com/clintonsteiner/python-monorepo/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-green" alt="License"></a>
+  <a href="https://github.com/clintonsteiner/hildies-python-monorepo/actions"><img src="https://github.com/clintonsteiner/python-monorepo/actions/workflows/bazel.yml/badge.svg" alt="Build"></a>
+  <a href="https://github.com/clintonsteiner/hildies-python-monorepo/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-green" alt="License"></a>
 </p>
 
 ---
@@ -194,5 +194,5 @@ This project is licensed under the MIT License — see the [LICENSE](LICENSE) fi
   <em>Made by Clinton, inspired by Hildie</em>
 </p>
 <p align="center">
-  <img src="https://raw.githubusercontent.com/clintonsteiner/python-monorepo/refs/heads/master/hildie.png" alt="Hildie the Dog" width="400"/>
+  <img src="https://raw.githubusercontent.com/clintonsteiner/hildies-python-monorepo/refs/heads/master/hildie.png" alt="Hildie the Dog" width="400"/>
 </p>

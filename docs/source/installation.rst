@@ -23,8 +23,8 @@ Clone the repository:
 
 .. code-block:: bash
 
-   git clone https://github.com/clintonsteiner/python-monorepo.git
-   cd python-monorepo
+   git clone https://github.com/clintonsteiner/hildies-python-monorepo.git
+   cd hildies-python-monorepo
 
 Install in development mode:
 

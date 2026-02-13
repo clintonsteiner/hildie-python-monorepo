@@ -20,7 +20,7 @@ def setUp(self):
 Add to `.pre-commit-config.yaml` using the repo's tag:
 
 ```yaml
-- repo: https://github.com/clintonsteiner/python-monorepo
+- repo: https://github.com/clintonsteiner/hildies-python-monorepo
   rev: v1.2.3  # replace with the latest tag
   hooks:
     - id: unittest-super-last
@@ -45,7 +45,7 @@ No extra dependencies required — the hook uses only the Python standard librar
 Enable in `.pre-commit-config.yaml`:
 
 ```yaml
-- repo: https://github.com/clintonsteiner/python-monorepo
+- repo: https://github.com/clintonsteiner/hildies-python-monorepo
   rev: v1.2.3
   hooks:
     - id: unittest-super-last
