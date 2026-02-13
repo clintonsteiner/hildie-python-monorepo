@@ -43,9 +43,9 @@ docs = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/clintonsteiner/python-monorepo"
-Repository = "https://github.com/clintonsteiner/python-monorepo"
-Issues = "https://github.com/clintonsteiner/python-monorepo/issues"
+Homepage = "https://github.com/clintonsteiner/hildies-python-monorepo"
+Repository = "https://github.com/clintonsteiner/hildies-python-monorepo"
+Issues = "https://github.com/clintonsteiner/hildies-python-monorepo/issues"
 
 [tool.ruff]
 line-length = 100

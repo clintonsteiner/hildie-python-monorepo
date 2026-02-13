@@ -21,8 +21,8 @@ Use in other repos by referencing this repo's tag:
 
 .. code-block:: yaml
 
-   - repo: https://github.com/clintonsteiner/python-monorepo
-     rev: v1.2.3
+   - repo: https://github.com/clintonsteiner/hildies-python-monorepo
+     rev: v0.22.23
      hooks:
        - id: unittest-super-last
 
