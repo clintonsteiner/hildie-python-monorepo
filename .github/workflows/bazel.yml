@@ -58,7 +58,7 @@ jobs:
           mkdir -p dist/{java,go,rust,npm}
 
           cp bazel-bin/hildie-*.whl dist/ || true
-          cp bazel-bin/source/hildie/bindings/python/hildie_bindings-*.whl dist/ || true
+          #cp bazel-bin/source/hildie/bindings/python/hildie_bindings-*.whl dist/ || true
           find bazel-bin/source/hildie/java -name "*.jar" -exec cp {} dist/java/ \; || true
           cp bazel-bin/source/hildie/go/app/hildie-go-app dist/go/ || true
           cp bazel-bin/source/hildie/go/cli/hildie-go-cli dist/go/ || true
