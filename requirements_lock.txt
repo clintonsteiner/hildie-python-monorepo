@@ -28,7 +28,7 @@ pytest-cov==7.0.0
     # via hildie (pyproject.toml)
 requests==2.32.5
     # via hildie (pyproject.toml)
-ruff==0.15.0
+ruff==0.15.1
     # via hildie (pyproject.toml)
 urllib3==2.6.3
     # via requests
