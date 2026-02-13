@@ -40,6 +40,7 @@ docs = [
     "sphinx-rtd-theme>=3.0.0",
     "roman",
     "sphinx-toolbox",
+    "sphinxcontrib-jquery",
 ]
 
 [project.urls]
