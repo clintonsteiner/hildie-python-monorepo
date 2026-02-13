@@ -10,7 +10,7 @@ Hildie is a Python monorepo containing a collection of utilities and tools.
 
 .. image:: https://img.shields.io/pypi/v/hildie.svg
    :alt: PyPI Version
-.. image:: https://img.shields.io/pypi/pyversions/hildie.svg
+.. image:: https://img.shields.io/pypi/v/hildie
    :alt: Python Versions
 .. image:: https://img.shields.io/github/actions/workflow/status/clintonsteiner/hildies-python-monorepo/bazel.yml?branch=master&label=passing&color=brightgreen
    :alt: Build Status
