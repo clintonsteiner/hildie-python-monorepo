@@ -151,11 +151,6 @@ jobs:
             cd dist/npm/npm_package
             npm publish --access public
           fi
-      - name: Import GPG key
-        uses: crazy-max/ghaction-import-gpg@v6
-        with:
-          gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
-
 
       - name: Publish Rust crates to crates.io
         continue-on-error: true
