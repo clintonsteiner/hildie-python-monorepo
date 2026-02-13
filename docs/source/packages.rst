@@ -3,6 +3,34 @@ Packages
 
 The Hildie monorepo contains several packages, each serving a specific purpose.
 
+check-unittest-super
+--------------------
+
+Pre-commit hook that enforces ``super()`` is the **last** call in
+``setUp``, ``tearDown``, ``setUpClass``, and ``tearDownClass`` for
+``unittest.TestCase`` subclasses.
+
+**Purpose:** Prevent subtle ordering bugs caused by running base-class setup
+before test-specific state is initialised.
+
+**Location:** ``packages/check-unittest-super``
+
+**Source:** ``src/hildie/check_unittest_super.py``
+
+Use in other repos by referencing this repo's tag:
+
+.. code-block:: yaml
+
+   - repo: https://github.com/clintonsteiner/python-monorepo
+     rev: v1.2.3
+     hooks:
+       - id: unittest-super-last
+
+Optional flags:
+
+- ``--fix`` — auto-correct violations in place (moves or inserts the ``super()`` call)
+- ``--profile`` — print per-file millisecond timing to stderr
+
 archive-git-forks
 -----------------
 

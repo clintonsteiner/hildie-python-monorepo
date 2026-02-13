@@ -1,0 +1,5 @@
+"""BUILD file for check-unittest-super tests."""
+
+load("//tools:pytest.bzl", "package_tests")
+
+package_tests()

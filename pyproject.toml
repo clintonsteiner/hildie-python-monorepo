@@ -26,6 +26,9 @@ dependencies = [
 ]
 dynamic = ["version"]
 
+[project.scripts]
+check-unittest-super = "hildie.check_unittest_super:main"
+
 [project.optional-dependencies]
 dev = [
     "pytest>=8.0.0",

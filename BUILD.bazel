@@ -1,6 +1,6 @@
 """Root BUILD file for Hildie monorepo."""
 
-load("@rules_python//python:defs.bzl", "py_library")
+load("@rules_python//python:defs.bzl", "py_binary", "py_library")
 load("@rules_python//python:packaging.bzl", "py_wheel")
 load("//tools:hildie.bzl", "all_package_tests", "hildie_cli")
 
@@ -13,6 +13,13 @@ py_library(
         "@pip//click",
         "@pip//requests",
     ],
+)
+
+py_binary(
+    name = "check-unittest-super",
+    srcs = ["src/hildie/check_unittest_super.py"],
+    main = "src/hildie/check_unittest_super.py",
+    visibility = ["//visibility:public"],
 )
 
 hildie_cli(
@@ -40,6 +47,7 @@ all_package_tests(
     name = "all_tests",
     packages = [
         "archive-git-forks",
+        "check-unittest-super",
         "my-app",
         "my-cli",
         "my-library",

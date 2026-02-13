@@ -41,6 +41,7 @@ Packages
 
 This monorepo contains several packages:
 
+* **check-unittest-super** - Pre-commit hook enforcing super() call ordering in unittest
 * **archive-git-forks** - Tools for archiving Git fork repositories
 * **my-app** - Application utilities
 * **my-cli** - Command-line interface tools

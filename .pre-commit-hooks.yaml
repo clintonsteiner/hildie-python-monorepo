@@ -1,0 +1,8 @@
+- id: unittest-super-last
+  name: unittest super() must be last in setUp/tearDown
+  description: >
+    Ensures super().setUp() and super().tearDown() are the final statements
+    in those methods for classes inheriting from unittest.TestCase.
+  entry: check-unittest-super
+  language: python
+  types: [python]
